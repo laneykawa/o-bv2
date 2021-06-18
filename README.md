@@ -4,7 +4,7 @@ This project was created using React and Firebase.
 
 ## The Team
 
-## Project Owner
+### Project Owner
 
 ### Project Manager
 Daniel Ruales
