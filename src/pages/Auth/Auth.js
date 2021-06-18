@@ -16,10 +16,10 @@ function Auth(props) {
                     Sign {toggled ? "Up" : "In"} Here!
                 </PromptBtn>
             </Prompt>
-            <AuthForm>
-                <Header form >{toggled ? "Returning Customers" : "New Users"}</Header>
+            <AuthForm toggled={toggled}>
+                <Header form={'true'} >{toggled ? "Returning Customers" : "New Users"}</Header>
                 <Label>
-                    Username
+                    Email
                     <Input />
                 </Label>
                 <Label>

@@ -106,17 +106,19 @@ export const PromptBtn = styled.button`
 export const AuthForm = styled.form`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 40vh;
+    justify-content: ${props => props.toggled ? 'space-evenly' : 'space-between'};
+    height: 50vh;
     gap: 0.3rem;
     position: relative;
-    max-width: 30rem;
+    @media(min-width: 480px) {
+        max-width: 30rem;
+    }
     @media(min-width: 768px) {
         gap: 2rem;
         padding-left: 10%;
         grid-column: 2 / 3;
         grid-row: 1 / 4;
-        height: auto;
+        height: 27rem;
         &:after { ${'' /* This is the divider line */}
             content: "";
             position: absolute;
@@ -138,7 +140,7 @@ export const Label = styled.label`
 `
 export const Input = styled.input`
     width: 100%;
-    height: 2.2rem;
+    height: 2.5rem;
     border-radius: 100px;
     border: none;
     background: whitesmoke;
