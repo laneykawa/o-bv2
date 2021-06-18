@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# O-D
 
 This project was created using React and Firebase.
 
