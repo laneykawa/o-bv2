@@ -1,6 +1,8 @@
+import React, { useContext } from 'react'
 import './App.css';
 import Auth from './pages/Auth/Auth'
 import styled from 'styled-components'
+import { UserContext } from './context/UserProvider';
 
 const Container = styled.div`
     width: 100vw;
@@ -10,11 +12,18 @@ const Container = styled.div`
 `
 
 function App() {
-  return (
-    <Container>
-        <Auth />
-    </Container>
-  );
+    const { user, signOut } = useContext(UserContext)
+
+    return (
+        <Container>
+            {!user ? <Auth /> : 
+            <span>
+                <h1>You are logged in!</h1>
+                <button onClick={signOut}>Sign Out</button>
+            </span>
+            }
+        </Container>
+    );
 }
 
 export default App;

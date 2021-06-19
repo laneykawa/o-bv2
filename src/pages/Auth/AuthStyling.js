@@ -103,7 +103,7 @@ export const PromptBtn = styled.button`
     }
 `
 
-export const AuthForm = styled.form`
+export const StyledAuthForm = styled.form`
     display: flex;
     flex-direction: column;
     justify-content: ${props => props.toggled ? 'space-evenly' : 'space-between'};

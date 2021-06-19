@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Container, Logo, Header, Prompt, PromptBtn, AuthForm, Label, Input, SubmitBtn } from './AuthStyling'
+import AuthForm from './AuthForm'
+import { Container, Logo, Header, Prompt, PromptBtn } from './AuthStyling'
 
 function Auth(props) {
     const [ toggled, setToggled ] = useState(false)
-
+  
     return (
         <Container>
             <Logo>O-D</Logo>
@@ -16,22 +17,7 @@ function Auth(props) {
                     Sign {toggled ? "Up" : "In"} Here!
                 </PromptBtn>
             </Prompt>
-            <AuthForm toggled={toggled}>
-                <Header form={'true'} >{toggled ? "Returning Customers" : "New Users"}</Header>
-                <Label>
-                    Email
-                    <Input />
-                </Label>
-                <Label>
-                    Password
-                    <Input type="password" />
-                </Label>
-                {!toggled && <Label>
-                    Confirm Password
-                    <Input type="password" />
-                </Label>}
-                <SubmitBtn>Sign {toggled ? "In" : "Up"}</SubmitBtn>
-            </AuthForm>
+            <AuthForm toggled={toggled} />
         </Container>
     );
 }
