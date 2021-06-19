@@ -6,6 +6,7 @@ export const UserContext = React.createContext()
 
 function UserProvider(props) {
     const [user, setUser] = useState(firebase.auth().currentUser)
+    const [message, setMessage] = useState(null)
 
     function createUser(email, password, confirmPassword) {
         if(password === confirmPassword) {
@@ -13,17 +14,18 @@ function UserProvider(props) {
                 .then((userCredential) => {
                     // Signed in 
                     setUser(userCredential.user)
-                    // ...
                     console.log(user)
                 })
                 .catch((error) => {
                     var errorCode = error.code;
-                    var errorMessage = error.message;
-                    // ..
+                    setMessage(error.message)
                     console.log(errorCode)
-                    console.log(errorMessage)
+                    console.log(error.message)
                 });
-        } else console.log("Passwords do not match!")
+        } else {
+            setMessage("Passwords do not match!")
+            console.log("Passwords do not match!")
+        }
     }
 
     function signIn(email, password) {
@@ -31,14 +33,13 @@ function UserProvider(props) {
             .then((userCredential) => {
                 // Signed in
                 setUser(userCredential.user)
-                // ...
                 console.log(user)
             })
             .catch((error) => {
                 var errorCode = error.code;
-                var errorMessage = error.message;
+                setMessage(error.message)
                 console.log(errorCode)
-                console.log(errorMessage)
+                console.log(error.message)
             });
     }
 
@@ -57,7 +58,9 @@ function UserProvider(props) {
                 user,
                 createUser,
                 signIn,
-                signOut
+                signOut,
+                message,
+                setMessage
             }}
         >
             { props.children }

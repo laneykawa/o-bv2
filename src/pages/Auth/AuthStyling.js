@@ -106,7 +106,7 @@ export const PromptBtn = styled.button`
 export const StyledAuthForm = styled.form`
     display: flex;
     flex-direction: column;
-    justify-content: ${props => props.toggled ? 'space-evenly' : 'space-between'};
+    justify-content: space-between;
     height: 50vh;
     gap: 0.3rem;
     position: relative;
@@ -114,7 +114,8 @@ export const StyledAuthForm = styled.form`
         max-width: 30rem;
     }
     @media(min-width: 768px) {
-        gap: 2rem;
+        ${'' /* gap: 2rem; */}
+        bottom: -2rem;
         padding-left: 10%;
         grid-column: 2 / 3;
         grid-row: 1 / 4;
@@ -122,7 +123,7 @@ export const StyledAuthForm = styled.form`
         &:after { ${'' /* This is the divider line */}
             content: "";
             position: absolute;
-            bottom: 0; 
+            bottom: 3rem; 
             left: 0rem;
             width: 2px;
             height: 70%;
@@ -143,10 +144,16 @@ export const Input = styled.input`
     height: 2.5rem;
     border-radius: 100px;
     border: none;
+    box-shadow: ${props => props.message ? "0 0 0 2px indianred" : "none"};
     background: whitesmoke;
     outline: none;
     padding: 0 1rem;
     font-size: 1.2em;
+`
+export const Message = styled.p`
+    color: indianred;
+    font-weight: bold;
+    height: 20px;
 `
 export const SubmitBtn = styled.button`
     background: indianred;

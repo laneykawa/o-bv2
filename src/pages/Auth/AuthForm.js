@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { UserContext } from '../../context/UserProvider';
-import { StyledAuthForm, Header, Label, Input, SubmitBtn } from './AuthStyling'
+import { StyledAuthForm, Header, Label, Input, Message, SubmitBtn } from './AuthStyling'
 
 
 function AuthForm({ toggled }) {
-    const { createUser, signIn } = useContext(UserContext)
+    const { createUser, signIn, message, setMessage } = useContext(UserContext)
     const initInputs = {
         email: "",
         password: "",
@@ -28,6 +28,10 @@ function AuthForm({ toggled }) {
         }
     }
 
+    useEffect(() => {
+        setMessage(null)
+    }, [toggled])
+
     return (
         <StyledAuthForm 
             toggled={toggled} 
@@ -40,6 +44,8 @@ function AuthForm({ toggled }) {
                     name="email"
                     onChange={handleChange}
                     value={email}
+                    message={message}
+                    onClick={() => setMessage(null)}
                 />
             </Label>
             <Label>
@@ -49,6 +55,8 @@ function AuthForm({ toggled }) {
                     name="password"
                     onChange={handleChange}
                     value={password}
+                    message={message}
+                    onClick={() => setMessage(null)}
                 />
             </Label>
             {!toggled && <Label>
@@ -58,9 +66,12 @@ function AuthForm({ toggled }) {
                     name="confirmPassword"
                     onChange={handleChange}
                     value={confirmPassword}
+                    message={message}
+                    onClick={() => setMessage(null)}
                 />
             </Label>}
             <SubmitBtn>Sign {toggled ? "In" : "Up"}</SubmitBtn>
+            <Message>{message}</Message>
         </StyledAuthForm>
     );
 }
