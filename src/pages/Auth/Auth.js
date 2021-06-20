@@ -3,7 +3,7 @@ import AuthForm from './AuthForm'
 import { Container, Logo, Header, Prompt, PromptBtn } from './AuthStyling'
 
 function Auth(props) {
-    const [ toggled, setToggled ] = useState(false)
+    const [ toggled, setToggled ] = useState(true)
   
     return (
         <Container>

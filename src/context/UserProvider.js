@@ -55,6 +55,7 @@ function UserProvider(props) {
     return (
         <UserContext.Provider
             value={{
+                setUser,
                 user,
                 createUser,
                 signIn,
