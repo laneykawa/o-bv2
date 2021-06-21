@@ -46,6 +46,8 @@ export const Container = styled.div`
 export const Logo = styled.h1`
     font-size: 4em;
     @media(min-width: 768px) {
+        transform: translateX(12%);
+        text-align: left;
         font-size: 5em;
     }
 `

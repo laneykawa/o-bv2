@@ -14,6 +14,7 @@ function UserProvider(props) {
                 .then((userCredential) => {
                     // Signed in 
                     setUser(userCredential.user)
+                    localStorage.setItem('user', true)
                     console.log(user)
                 })
                 .catch((error) => {
@@ -33,6 +34,7 @@ function UserProvider(props) {
             .then((userCredential) => {
                 // Signed in
                 setUser(userCredential.user)
+                localStorage.setItem('user', true)
                 console.log(user)
             })
             .catch((error) => {
@@ -46,6 +48,7 @@ function UserProvider(props) {
     function signOut() {
         firebase.auth().signOut().then(() => {
             setUser(firebase.auth().currentUser)
+            localStorage.removeItem('user')
             console.log("Signed Out")
           }).catch((error) => {
             console.log(error)

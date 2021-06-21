@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './App.css';
 import Auth from './pages/Auth/Auth'
 import styled from 'styled-components'
@@ -11,24 +11,37 @@ const Container = styled.div`
     height: 100vh;
     display: grid;
     place-items: center;
+    color: whitesmoke;
 `
+
 
 function App() {
     const { user, setUser, signOut } = useContext(UserContext)
+    const [isSignedIn, setIsSignedIn] = useState(JSON.parse(localStorage.getItem('user')))
 
     useEffect(() => {
-        console.log("test")
         firebase.auth().onAuthStateChanged(user => {
-            if (user) setUser(user)
+            if (user) {
+                setUser(user)
+                localStorage.setItem('user', true)
+                setIsSignedIn(true)
+            } else {
+                localStorage.removeItem('user')
+                setIsSignedIn(false)
+            }
           });
     }, [])
 
     return (
         <Container>
-            {!user ? <Auth /> : 
+            {!isSignedIn ? <Auth /> : 
             <span>
-                <h1>You are logged in!</h1>
-                <button onClick={signOut}>Sign Out</button>
+                <h2>You are logged in as</h2>
+                <h1 style={{color: "#ccc"}}>{user?.email}!</h1>
+                <button 
+                    onClick={signOut}
+                    style={{padding: "0.5rem", fontWeight: "bold", background: "indianred", border: "none", borderRadius: "100px", color: "whitesmoke", marginTop: 10}}
+                >Sign Out</button>
             </span>
             }
         </Container>
