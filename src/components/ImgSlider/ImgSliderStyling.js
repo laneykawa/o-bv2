@@ -4,7 +4,6 @@ import bgImg from "../../images/PiperArrowIILeftSside.jpg";
 export const Container = styled.div`
     width: 100vw;
     height: 25rem;
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
     position: relative;
     display: flex;
     justify-content: center;
