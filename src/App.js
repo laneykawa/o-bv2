@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './App.css';
 import Auth from './pages/Auth/Auth'
+import Booking from './pages/Booking/Booking'
 import styled from 'styled-components'
 import { UserContext } from './context/UserProvider';
 import firebase from 'firebase/app'
@@ -9,8 +10,8 @@ import 'firebase/auth'
 const Container = styled.div`
     width: 100vw;
     height: 100vh;
-    display: grid;
-    place-items: center;
+    ${'' /* display: grid; */}
+    ${'' /* place-items: center; */}
     color: whitesmoke;
 `
 
@@ -35,15 +36,15 @@ function App() {
     return (
         <Container>
             {!isSignedIn ? <Auth /> : 
-            <span>
+            <Booking />}
+            {/* <span>
                 <h2>You are logged in as</h2>
                 <h1 style={{color: "#ccc"}}>{user?.email}!</h1>
                 <button 
                     onClick={signOut}
                     style={{padding: "0.5rem", fontWeight: "bold", background: "indianred", border: "none", borderRadius: "100px", color: "whitesmoke", marginTop: 10}}
                 >Sign Out</button>
-            </span>
-            }
+            </span> */}
         </Container>
     );
 }
