@@ -1,5 +1,5 @@
-import styled from 'styled-components'
-import bgImg from '../../images/1975PiperArrow1.jpg'
+import styled from "styled-components";
+import bgImg from "../../images/1975PiperArrow1.jpg";
 
 export const Container = styled.div`
     display: grid;
@@ -11,10 +11,10 @@ export const Container = styled.div`
     width: 100%;
     padding: 1rem;
     color: whitesmoke;
-    @media(min-width: 480px) {
+    @media (min-width: 480px) {
         max-width: 30rem;
     }
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
         max-width: initial;
         gap: 1rem;
         padding: 2rem;
@@ -22,11 +22,11 @@ export const Container = styled.div`
         grid-auto-rows: min-content;
         grid-template-columns: 5fr 6fr;
     }
-    @media(min-width: 1024px) {
+    @media (min-width: 1024px) {
         width: 90%;
         padding-left: 0;
     }
-    @media(min-width: 1200px) {
+    @media (min-width: 1200px) {
         width: 70%;
     }
     &:before {
@@ -41,55 +41,53 @@ export const Container = styled.div`
         filter: brightness(0.4);
         z-index: -1;
     }
-`
+`;
 
 export const Logo = styled.h1`
     font-size: 4em;
-    @media(min-width: 768px) {
-        transform: translateX(12%);
-        text-align: left;
+    @media (min-width: 768px) {
         font-size: 5em;
     }
-`
+`;
 export const Header = styled.h1`
     font-weight: normal;
     font-size: 1.7em;
-    justify-self: ${props => props.form ? "left" : "center"};
-    text-align: ${props => props.form ? "left" : "center"};
-    display: ${props => props.form && "none"};
-    width: 19ch;
-    @media(min-width: 480px) {
+    justify-self: ${(props) => (props.form ? "left" : "center")};
+    text-align: ${(props) => (props.form ? "left" : "center")};
+    display: ${(props) => props.form && "none"};
+    width: 22ch;
+    @media (min-width: 480px) {
     }
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
         display: block;
         grid-row: 2 / 3;
     }
-    @media(min-width: 1024px) {
+    @media (min-width: 1024px) {
         font-size: 1.9em;
     }
-    @media(min-width: 1200px) {
+    @media (min-width: 1200px) {
         font-size: 2.2em;
     }
-`
+`;
 export const Prompt = styled.p`
     display: flex;
     justify-content: space-around;
     font-size: 1.1em;
     grid-row: 4 / 5;
-    @media(min-width: 480px) {
+    @media (min-width: 480px) {
         font-size: 1.2em;
     }
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
         grid-row: 3 / 4;
         gap: 1rem;
     }
-    @media(min-width: 1024px) {
+    @media (min-width: 1024px) {
         font-size: 1.4em;
     }
-    @media(min-width: 1200px) {
+    @media (min-width: 1200px) {
         font-size: 1.5em;
     }
-`
+`;
 export const PromptBtn = styled.button`
     border: none;
     background: transparent;
@@ -103,7 +101,7 @@ export const PromptBtn = styled.button`
         cursor: pointer;
         transform: scale(1.1);
     }
-`
+`;
 
 export const StyledAuthForm = styled.form`
     display: flex;
@@ -112,20 +110,21 @@ export const StyledAuthForm = styled.form`
     height: 50vh;
     gap: 0.3rem;
     position: relative;
-    @media(min-width: 480px) {
+    @media (min-width: 480px) {
         max-width: 30rem;
     }
-    @media(min-width: 768px) {
-        ${'' /* gap: 2rem; */}
+    @media (min-width: 768px) {
+        ${"" /* gap: 2rem; */}
         bottom: -2rem;
         padding-left: 10%;
         grid-column: 2 / 3;
         grid-row: 1 / 4;
         height: 27rem;
-        &:after { ${'' /* This is the divider line */}
+        &:after {
+            ${"" /* This is the divider line */}
             content: "";
             position: absolute;
-            bottom: 3rem; 
+            bottom: 3rem;
             left: 0rem;
             width: 2px;
             height: 70%;
@@ -133,30 +132,30 @@ export const StyledAuthForm = styled.form`
             z-index: 10;
         }
     }
-`
+`;
 export const Label = styled.label`
     font-size: 1.2em;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
     text-align: left;
-`
+`;
 export const Input = styled.input`
     width: 100%;
     height: 2.5rem;
     border-radius: 100px;
     border: none;
-    box-shadow: ${props => props.message ? "0 0 0 2px indianred" : "none"};
+    box-shadow: ${(props) => (props.message ? "0 0 0 2px indianred" : "none")};
     background: whitesmoke;
     outline: none;
     padding: 0 1rem;
     font-size: 1.2em;
-`
+`;
 export const Message = styled.p`
     color: indianred;
     font-weight: bold;
     height: 20px;
-`
+`;
 export const SubmitBtn = styled.button`
     background: indianred;
     border: none;
@@ -175,8 +174,7 @@ export const SubmitBtn = styled.button`
     &:active {
         transform: scale(0.98);
     }
-    @media(min-width: 768px) {
+    @media (min-width: 768px) {
         margin: 0;
     }
-`
-
+`;

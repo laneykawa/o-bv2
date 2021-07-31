@@ -1,10 +1,12 @@
-import React from 'react';
-import { Container, Img } from './ImgSliderStyling'
+import React from "react";
+import { Background, Container, Img } from "./ImgSliderStyling";
+import bgImg from "../../images/PiperArrowIILeftSside.jpg";
 
 function ImgSlider(props) {
     return (
-        <Container bg="https://source.unsplash.com/random">
-            <Img src="https://source.unsplash.com/random" />
+        <Container>
+            <Background bg={bgImg} />
+            <Img src={bgImg} />
         </Container>
     );
 }

@@ -1,10 +1,10 @@
-import React from 'react';
-import { StyledUser } from './UserStyling'
-import { AiOutlineUser } from 'react-icons/ai'
+import React from "react";
+import { StyledUser } from "./UserStyling";
+import { AiOutlineUser } from "react-icons/ai";
 
 function User(props) {
     return (
-        <StyledUser>
+        <StyledUser onClick={props.onClick}>
             <AiOutlineUser />
         </StyledUser>
     );
