@@ -3,7 +3,7 @@ import bgImg from "../../images/PiperArrowIILeftSside.jpg";
 
 export const Container = styled.div`
     width: 100vw;
-    height: 25rem;
+    height: 22rem;
     position: relative;
     display: flex;
     justify-content: center;

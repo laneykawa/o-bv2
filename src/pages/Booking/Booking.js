@@ -4,7 +4,14 @@ import {
     Logo,
     Container,
     Content,
+    Column,
     Text,
+    Bold,
+    RightAligned,
+    Divider,
+    IconBtn,
+    FinalInfo,
+    InfoLine,
     SubmitBtn,
 } from "./BookingStyling";
 import User from "../../components/User/User";
@@ -21,7 +28,7 @@ function Booking(props) {
             <Container>
                 <ImgSlider />
                 <Content>
-                    <div>
+                    <Column>
                         <Text as="h1">1975 Piper Arrow</Text>
                         <Text as="h4" color="#E35656">
                             *50 to 100 hour blocks are discounted
@@ -50,8 +57,8 @@ function Booking(props) {
                             you will only be charged for time that the plane is
                             actually in the air.
                         </Text>
-                    </div>
-                    <div>
+                    </Column>
+                    <Column>
                         <Text as="h3">Start:</Text>
                         <div
                             style={{
@@ -68,82 +75,46 @@ function Booking(props) {
                                 border: "1px solid gray",
                             }}
                         ></div>
-                    </div>
-                    <div style={{ width: "80%" }}>
-                        <div style={{ textAlign: "right" }}>
+                    </Column>
+                    <Column>
+                        <RightAligned>
                             <Text as="h1" color="#E35656">
                                 $175 / hr
                             </Text>
                             <Text as="p">
-                                <span style={{ fontWeight: "bold" }}>
-                                    Start:{" "}
-                                </span>
+                                <Bold>Start: </Bold>
                                 September 16, 2021 10am
                             </Text>
                             <Text as="p">
-                                <span style={{ fontWeight: "bold" }}>
-                                    End:{" "}
-                                </span>
+                                <Bold>End: </Bold>
                                 September 18, 2021 4pm
                             </Text>
-                            <div
-                                style={{
-                                    height: 2,
-                                    background: "#222",
-                                }}
-                            ></div>
-                            <Text
-                                as="h3"
-                                style={{
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "flex-end",
-                                    gap: 10,
-                                    cursor: "pointer",
-                                }}
-                            >
-                                Add another date{" "}
-                                <BsPlusCircleFill
-                                    style={{ fontSize: "1.5em" }}
-                                />
-                            </Text>
-                        </div>
-                        <div
-                            style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                marginTop: "2rem",
-                            }}
-                        >
-                            <Text as="h4">Total Hours:</Text>
-                            <Text>29hrs</Text>
-                        </div>
-                        <div
-                            style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                borderTop: "1px solid lightgray",
-                            }}
-                        >
-                            <Text as="h4">Amount due now:</Text>
-                            <Text>$10</Text>
-                        </div>
-                        <div
-                            style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                                borderTop: "1px solid lightgray",
-                            }}
-                        >
-                            <Text as="h4">Total Booking Amount:</Text>
-                            <Text>$5075</Text>
-                        </div>
+                            <Divider />
+                            <IconBtn>
+                                Add another date
+                                <BsPlusCircleFill />
+                            </IconBtn>
+                        </RightAligned>
+                        <FinalInfo>
+                            <InfoLine>
+                                <Text as="h4">Total Hours:</Text>
+                                <Text>29hrs</Text>
+                            </InfoLine>
+                            <InfoLine>
+                                <Text as="h4">Amount due now:</Text>
+                                <Text>$10</Text>
+                            </InfoLine>
+                            <InfoLine>
+                                <Text as="h4">Total Booking Amount:</Text>
+                                <Text>$5075</Text>
+                            </InfoLine>
+                        </FinalInfo>
                         <Text as="h4" color="#E35656" marginTop="2rem">
                             Before checking out you will be required to upload a
                             copy of your pilot's license and insurance
                         </Text>
                         <SubmitBtn>Continue</SubmitBtn>
-                    </div>
+                    </Column>
                 </Content>
             </Container>
         </>
