@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     AppBar,
     Logo,
@@ -17,8 +17,24 @@ import {
 import User from "../../components/User/User";
 import ImgSlider from "../../components/ImgSlider/ImgSlider";
 import { BsPlusCircleFill } from "react-icons/bs";
+import "react-date-range/dist/styles.css"; // main style file
+import "react-date-range/dist/theme/default.css"; // theme css file
+import { DateRange } from "react-date-range";
 
 function Booking(props) {
+    const [range, setRange] = useState([
+        {
+            startDate: new Date(),
+            endDate: null,
+            key: "selection",
+        },
+    ]);
+
+    function handleChange(item) {
+        setRange([item.selection]);
+        console.log(item);
+    }
+
     return (
         <>
             <AppBar>
@@ -59,7 +75,14 @@ function Booking(props) {
                         </Text>
                     </Column>
                     <Column>
-                        <Text as="h3">Start:</Text>
+                        <Text as="h3">Choose a date range:</Text>
+                        <DateRange
+                            editableDateInputs={true}
+                            onChange={handleChange}
+                            moveRangeOnFirstSelection={false}
+                            ranges={range}
+                        />
+                        {/* <Text as="h3">Start:</Text>
                         <div
                             style={{
                                 width: "300px",
@@ -74,7 +97,7 @@ function Booking(props) {
                                 height: "180px",
                                 border: "1px solid gray",
                             }}
-                        ></div>
+                        ></div> */}
                     </Column>
                     <Column>
                         <RightAligned>
