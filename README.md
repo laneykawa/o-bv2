@@ -4,11 +4,12 @@ This project was created using React and Firebase.
 
 ## The Team
 
-### Project Owner
+### Project Owner/Stakeholder
+-- Jessie James
 
 ### Project Manager
- - Daniel Ruales
+ - Laney Kawaguchi
 
 ### Developers
- - Alex Ramirez
  - Garrett Smith
+ - Ren Gian
