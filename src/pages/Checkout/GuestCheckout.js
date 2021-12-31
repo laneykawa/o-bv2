@@ -33,9 +33,9 @@ function GuestCheckout({ toggled }) {
         }
     }
 
-    useEffect(() => {
-        setMessage(null)
-    }, [toggled])
+    // useEffect(() => {
+    //     setMessage(null)
+    // }, [toggled])
 
     return (
         <StyledAuthForm 

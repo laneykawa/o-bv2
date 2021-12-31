@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"
+import Checkout from "../Checkout/Checkout";
 import {
     AppBar,
     Logo,
@@ -136,7 +138,7 @@ function Booking(props) {
                             Before checking out you will be required to upload a
                             copy of your pilot's license and insurance
                         </Text>
-                        <SubmitBtn>Continue</SubmitBtn>
+                        <Link to={"/Checkout"}><SubmitBtn>Continue</SubmitBtn></Link>
                     </Column>
                 </Content>
             </Container>

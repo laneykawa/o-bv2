@@ -41,7 +41,7 @@ function App() {
       {!isSignedIn ? <Auth /> : <Booking signOut={signOut} />}
       <Router>
       <Switch>
-        <Route path="/checkout" component={Checkout} redirectTo="/"></Route>
+        <Route path="/Checkout" component={Checkout} redirectTo="/Checkout"></Route>
       </Switch>
       </Router>
       {/* <span>
