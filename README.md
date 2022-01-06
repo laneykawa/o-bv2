@@ -7,8 +7,9 @@ This project was created using React and Firebase.
 ### Project Owner
 
 ### Project Manager
- - Daniel Ruales
+ - Laney Kawaguchi
 
 ### Developers
- - Alex Ramirez
+ - Ren Gian
  - Garrett Smith
+ - Carlose Zapien
